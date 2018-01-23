@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	Top page
+------------------------------------------------------------*/
+/*.sample {
+	transform: scale(1);
+	background-size: cover;
+	-webkit-background-size: cover;
+	display: flex;
+}*/
+/*------------------fonts-----------------*/
+@font-face {
+  font-family: meiryo;
+  src: url(../fonts/meiryo.ttc);
+}
+
+/*----------------------------------------*/
+* a {
+  color: #000;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/*----------------------------------------*/
+/*----------------------------------------*/
+@media screen and (max-width: 640px) {
+  body {
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    font-size: 62.5%;
+    font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  }
+}

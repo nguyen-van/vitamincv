@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import "vars";	// 変数 Variable
+@import "functions"; // 関数等 Function
+/*------------------------------------------------------------
+	Top page
+------------------------------------------------------------*/
+/*.sample {
+	transform: scale(1);
+	background-size: cover;
+	-webkit-background-size: cover;
+	display: flex;
+}*/
+/*------------------fonts-----------------*/
+@font-face{
+  font-family: meiryo;
+  src: url(../fonts/meiryo.ttc);
+}
+/*----------------------------------------*/
+*{
+	a{	
+		color: #000;
+		text-transform: none;
+		text-decoration: none;
+	}
+}
+.clearfix{clear: both;}
+/*----------------------------------------*/
+$smart: 640px;
+@mixin smart {
+  @media screen and (max-width: $smart) {
+    @content;
+  }
+}
+/*----------------------------------------*/
+@include smart {
+	body{
+		min-width: fit-content;
+		font-size: 62.5%;
+		font-family:   "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+	}
+}

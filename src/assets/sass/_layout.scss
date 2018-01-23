@@ -1,0 +1,268 @@
+@charset "UTF-8";
+/*-----------------Layout----------*/
+body {
+	min-width: 1180px;
+	line-height: 1.5;
+	text-align: center;
+	background: #fff url(https://ucarecdn.com/e5b889d2-d8f3-4ba0-bfe3-4477a23c7124//) repeat top left;
+}
+/*--------------header-----------*/
+.c-menuSP {
+	display: none;
+	width: 35px;
+	height: 35px;
+	background: #fff url(https://ucarecdn.com/e5b889d2-d8f3-4ba0-bfe3-4477a23c7124//) repeat top left;
+	margin-right: 10px;
+	@include breakpoint1 {
+		display: inline-block;
+		position: fixed;
+		right: 0;
+		top: 25px;
+	}
+   .button-toggle {
+	    p{
+	    	&:nth-child(1){
+		    	width: 28px;
+		    	height: 2px;
+		    	background: #000;
+		    	margin: 10px 0 0 3px;
+		    	transition: .25s ease-in-out;
+	    	}
+	    	&:nth-child(2){
+		    	width: 25px;
+		    	height: 2px;
+		    	background: #000;
+		    	margin: 5px 0 0 6px;
+		    	transition: .25s ease-in-out;
+	    	}
+	    	&:nth-child(3){
+		    	width: 28px;
+		    	height: 2px;
+		    	background: #000;
+		    	margin: 5px 0 0 3px;
+		    	transition: .25s ease-in-out;
+	    	}
+    	}
+ 	}
+ 	.open{
+ 		p{
+ 			&:nth-child(1){
+				transform: rotate(-135deg);
+				top: 7px;
+				position: relative;
+				transition: .25s ease-in-out;
+	    	}
+	    	&:nth-child(2){
+		    	opacity: 0;
+	    	}
+	    	&:nth-child(3){
+				transform: rotate(135deg);
+				top: -7px;
+				position: relative;
+				transition: .25s ease-in-out;
+	    	}
+ 		}
+ 	}
+}
+/*------------------------------*/
+.c-menuPC{
+	position: fixed;
+	right: 0;
+	top: 45px;
+	background: #abe3ff;
+	box-shadow: 0px 3px 3px 0px rgba( 1, 2, 2, 0.05);
+	overflow:hidden;
+	z-index: 9999;
+	cursor: pointer;
+	&:before {
+		content:"";
+		position:absolute;
+		top:0;
+		right:0;
+		border-width:0 16px 16px 0; 
+		border-style:solid;
+		border-color: #fff #fff #abe3ff #658E15; 
+		background:#658E15; 
+		display:block; width:0; 
+		-webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+		-moz-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+		box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    }
+	@include breakpoint1 {
+     	display: none;
+	}
+	ul{
+		li{
+			padding: 10px 0;
+			a{
+				color: #fff;
+				font-size: 1.4rem;
+				margin: 0 25px 0;
+				cursor: default;
+				&:hover{
+					color: #000;
+				}
+			}
+		}
+	}
+}
+/*---------	menu sp-------------*/
+.c-hsp{
+	background: #fff;
+	clear: both;
+	float: none;
+	display: none;
+	list-style: none;
+    top: 75px;
+    width: 100%;
+    position: fixed;
+	left: 0px;
+	overflow: hidden;
+    @include breakpoint1 {
+		display: inline-block;
+	}
+	&__sp{
+		cursor: default;
+		font-size: 1.8rem;
+		line-height: 1.5;
+		padding: 10px 0;
+		font-weight: 500;
+		border: 1px solid transparent;
+		margin: 0;
+		text-align: center;
+		// border-bottom: 1px dashed #96d6e8;
+		border-bottom: 1px solid #fff;
+		background: #abe3ff;
+		a{
+			color: #fff !important;
+		}	
+	}
+	.bottom{
+		border: none;
+	}
+}
+/*-------------------line-------*/
+.c-line{
+	width: 100%;
+	height: 4px;
+	background-color: #ccc;
+	// background: #F8F8F8 url(/assets/img/2.jpg) center center no-repeat fixed;
+	position: fixed;
+	z-index: 9999;
+}
+/*----------------to top---------*/
+#home{ transition: transform .6s .9s; }
+#blog{ transition: transform .6s .9s;}
+#contact{ transition: transform .6s .9s;}
+#about{ transition: transform .6s .9s;}
+/*----------btn to---------------*/
+.pagetop{
+	width: 45px;
+	height: 45px;
+	border-radius: 50px;
+	float: right;
+	background: #000 url(https://ucarecdn.com/e5b889d2-d8f3-4ba0-bfe3-4477a23c7124//) repeat top left;
+	position: fixed;
+	bottom: 75px;
+	right: 0;
+	font-size: 2rem;
+	font-weight: normal;
+	line-height: 2.2em;
+	color: #1eb2fb !important;
+	&:hover{
+		opacity: 0.7;
+	}
+}
+/*------------------------------*/
+.loading-mask {
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #fff;
+	height: 100%;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+	-webkit-transition-timing-function: ease;
+	transition-timing-function: ease;
+}
+.loading-mask.is-remove {
+	top: -20px;
+	height: 0;
+}
+.loading-sets {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -20px;
+	.loading {
+		width: 2px;
+		height: 30px;
+		background: #77efff;
+		// border-radius: 50%;
+		float: left;
+		margin-right: 8px;
+	}
+	.loading-0 {
+		-webkit-animation: bounce 1s infinite ease;
+		-webkit-animation-delay: 0.1s;
+		background: #77ffc8;
+	}
+
+	.loading-1 {
+		-webkit-animation: bounce 1s infinite ease;
+		-webkit-animation-delay: 0.3s;
+		background: #77efff;
+	}
+
+	.loading-2 {
+		-webkit-animation: bounce 1s infinite ease;
+		-webkit-animation-delay: 0.5s;
+		background: #77ffc8;
+	}
+	.loading-3 {
+		-webkit-animation: bounce 1s infinite ease;
+		-webkit-animation-delay: 0.5s;
+		background: #77efff;
+	}
+	.loading-4 {
+		-webkit-animation: bounce 1s infinite ease;
+		-webkit-animation-delay: 0.5s;
+		background: #77ffc8;
+	}
+	.loading-5 {
+		-webkit-animation: bounce 1s infinite ease;
+		-webkit-animation-delay: 0.5s;
+		background: #77efff;
+	}
+	.loading-6 {
+		-webkit-animation: bounce 1s infinite ease;
+		-webkit-animation-delay: 0.5s;
+		background: #77ffc8;
+	}
+	.loading-7 {
+		-webkit-animation: bounce 1s infinite ease;
+		-webkit-animation-delay: 0.5s;
+		background: #77efff;
+	}
+	.loading-8 {
+		-webkit-animation: bounce 1s infinite ease;
+		-webkit-animation-delay: 0.5s;
+		background: #77ffc8;
+	}	
+}
+@-webkit-keyframes bounce {
+	0%, 100% {
+		opacity: 1;
+	}
+	60% {
+		opacity: 0;
+	}
+}
+.fade-up {
+ -webkit-transition: all 1.2s ease;
+ transition: all 1.2s ease;
+}
